@@ -1,14 +1,24 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import React from 'react';
 
-const Index = () => {
+import AuthLayout from '../components/layout/AuthLayout';
+import LoginForm from '../components/Auth/LoginForm';
+import { Card, CardContent } from '@/components/ui/card';
+
+/**
+ * The main application page, which serves as the login screen.
+ * It utilizes AuthLayout for centering and presents the LoginForm within a Card component,
+ * matching the design of a simple, modern authentication interface.
+ */
+const IndexPage: React.FC = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
-      </div>
-    </div>
+    <AuthLayout>
+      <Card className="w-96 shadow-lg rounded-lg border-0">
+        <CardContent className="p-8">
+          <LoginForm />
+        </CardContent>
+      </Card>
+    </AuthLayout>
   );
 };
 
-export default Index;
+export default IndexPage;
